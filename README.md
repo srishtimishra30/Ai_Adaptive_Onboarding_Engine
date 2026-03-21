@@ -79,6 +79,7 @@ uvicorn backend.app:app --reload
 ``` bash
 ```
 ### Frontend
+```bash
 cd AI-Onboarding-Engine/frontend
 npm install
 npm run dev
