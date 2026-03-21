@@ -83,6 +83,6 @@ uvicorn backend.app:app --reload
 cd AI-Onboarding-Engine/frontend
 npm install
 npm run dev
-```bash
+
 Frontend runs on `http://localhost:5173` 
 
