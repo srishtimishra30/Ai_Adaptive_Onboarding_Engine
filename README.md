@@ -73,17 +73,15 @@ AI-Onboarding-Engine/
 ```bash
 cd AI-Onboarding-Engine
 python -m venv .venv
-# Windows
 .venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn backend.app:app --reload
-'''
+``` bash
+```
 ### Frontend
-```bash
 cd AI-Onboarding-Engine/frontend
 npm install
 npm run dev
-'''
 ```
-Frontend runs on `http://localhost:5173` and backend on `http://localhost:8000`.
+Frontend runs on `http://localhost:5173` 
 
