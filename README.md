@@ -1,25 +1,34 @@
 # AI Adaptive Onboarding Engine
 
 End-to-end AI onboarding system that analyzes a candidate resume against a job description, detects skill gaps, and produces a personalized learning roadmap with explainable reasoning.
+The goal is simple:  
+1.) Reduce unnecessary training  
+2.) Focus only on what the candidate actually needs  
 
-## Features
-- Resume parsing (TXT/PDF) and JD parsing
-- Skill extraction with synonym normalization
-- Skill level detection (beginner/intermediate/advanced)
-- Skill gap analysis + resume score
-- Semantic matching using sentence-transformers (`all-MiniLM-L6-v2`)
-- Adaptive roadmap generation with dependency-aware ordering
-- No-gap advanced learning path fallback (roadmap always generated)
-- Professional React dashboard with:
-  - Upload feedback (`Upload successful`, `Processing`, `Analysis complete`)
-  - Resume score cards
-  - Pie chart for skill category coverage
-  - Progress bars
-  - Recommendations section
-  - Reasoning trace section
+## What This Project Does
+Instead of giving every new hire the same training, this system:
+- Understands what the candidate already knows  
+- Compares it with job requirements  
+- Identifies missing or weak areas  
+- Generates a structured learning path  
+- Explains *why* those recommendations were mad
+
+## Key Features
+-  Resume & Job Description parsing (TXT/PDF)
+-  Skill extraction with synonym handling
+-  Resume scoring + similarity analysis
+-  Semantic matching using `sentence-transformers`
+-  Skill gap detection (including hidden gaps)
+-  Adaptive learning roadmap generation
+-  Explainable reasoning trace 
+-  Interactive dashboard with:
+  - Score cards
+  - Skill breakdown charts
+  - Progress indicators
+  - Recommendations
+  - Reasoning insights
 
 ## Folder Structure
-```
 AI-Onboarding-Engine/
 ├── backend/
 │   ├── app.py
@@ -34,10 +43,19 @@ AI-Onboarding-Engine/
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
-```
+## Tech Stack
 
-## Architecture Diagram (Text)
-```
+**Frontend**
+- React (Vite)
+- Chart.js (for visualization)
+**Backend**
+- FastAPI
+- Python
+**AI / NLP**
+- Sentence Transformers (`all-MiniLM-L6-v2`)
+- Rule-based skill extraction + normalization
+
+## Architecture Diagram 
 [React Frontend]
     -> upload resume/JD
     -> trigger /analyze
@@ -49,10 +67,8 @@ AI-Onboarding-Engine/
     -> return reasoning JSON
 [Dashboard]
     -> render score, gap, chart, roadmap, recommendations
-```
-
+    
 ## Setup
-
 ### Backend
 ```bash
 cd AI-Onboarding-Engine
@@ -61,77 +77,12 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn backend.app:app --reload
-```
-
-### Optional spaCy setup
-spaCy is optional in this project. If you want spaCy model-based extensions:
-
-- Use Python `3.11` or `3.12` (recommended for spaCy compatibility)
-- Then run:
-
-```bash
-pip install -r requirements-spacy.txt
-python -m spacy download en_core_web_sm
-```
-
-If you are on Python `3.14`, skip spaCy install/download steps.
-
+'''
 ### Frontend
 ```bash
 cd AI-Onboarding-Engine/frontend
 npm install
 npm run dev
 ```
-
 Frontend runs on `http://localhost:5173` and backend on `http://localhost:8000`.
 
-## API Endpoints
-- `POST /upload-resume` - Upload resume file
-- `POST /upload-jd` - Upload job description file
-- `POST /analyze` - Execute extraction, matching, scoring, and roadmap generation
-- `GET /roadmap` - Return latest roadmap
-- `GET /health` - Health check
-
-## Response Format
-```json
-{
-  "user_skills": [],
-  "required_skills": [],
-  "skill_gap": [],
-  "learning_path": [
-    {
-      "skill": "",
-      "level": "",
-      "resources": []
-    }
-  ],
-  "recommendations": [],
-  "resume_score": 0,
-  "similarity_score": 0.0,
-  "reasoning": "Explanation of recommendations",
-  "missing_skill_explanation": ""
-}
-```
-
-## Models Used
-- **Skill extraction:** rule-based NLP with taxonomy + synonyms (extensible to spaCy/LLM)
-- **Similarity model:** sentence-transformers `all-MiniLM-L6-v2`
-- **Adaptive logic:** dependency-aware graph ordering + advanced fallback path
-
-## Dataset References
-- `models/learning_dataset.json` (dummy curated learning resources)
-- Sample testing files:
-  - `docs/sample_resume.txt`
-  - `docs/sample_jd.txt`
-
-## Docker
-```bash
-cd AI-Onboarding-Engine
-docker build -t ai-onboarding-engine .
-docker run -p 8000:8000 ai-onboarding-engine
-```
-
-## Bonus Upgrade Hooks
-- Add OpenAI/Gemini reasoning enhancer in `learning_path_generator.py`
-- Persist sessions and user auth using SQLite/PostgreSQL + JWT
-- Add radar chart and timeline roadmap views
