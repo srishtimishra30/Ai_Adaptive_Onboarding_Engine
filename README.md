@@ -57,13 +57,14 @@ AI-Onboarding-Engine/
 - Build Command: `npm install && npm run build`
 - Publish Directory: `dist`
 ## Tech Stack
-
 **Frontend**
 - React (Vite)
 - Chart.js (for visualization)
+- 
 **Backend**
 - FastAPI
 - Python
+- 
 **AI / NLP**
 - Sentence Transformers (`all-MiniLM-L6-v2`)
 - Rule-based skill extraction + normalization
