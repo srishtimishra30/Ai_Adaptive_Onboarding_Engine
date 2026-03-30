@@ -79,13 +79,11 @@ AI_ADAPTIVE_ENGINE/
 ## Architecture Diagram 
 ```
 [React Frontend]
-
     -> upload resume/JD
     -> trigger /analyze
 ```
 ```
 [FastAPI Backend]
-
     -> parse text
     -> extract skills + levels
     -> run semantic + gap analysis
@@ -94,7 +92,6 @@ AI_ADAPTIVE_ENGINE/
 ```
 ```
 [Dashboard]
-
     -> score, gap, chart, roadmap, recommendations, reasoning trace
 ```
     
