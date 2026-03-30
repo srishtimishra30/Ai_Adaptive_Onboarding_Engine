@@ -66,9 +66,11 @@ AI_ADAPTIVE_ENGINE/
 **Frontend**
 - React (Vite)
 - Chart.js (for visualization)
+  
 **Backend**
 - FastAPI
 - Python
+ 
 **AI / NLP**
 - Rule-based skill extraction + normalization
 
@@ -108,8 +110,8 @@ AI_ADAPTIVE_ENGINE/
 
 ## Deployment
  Live Project Link:
-- 👉 https://ai-adaptive-onboarding-engine-kappa.vercel.app?_vercel_share=NnIumuOUUcJkucg0uAEukEdhOO1oXnuI (Frontend)
-- 👉 https://aiadaptiveonboardingengine-production.up.railway.app/ (Backend)
+- Frontend- https://ai-adaptive-onboarding-engine-kappa.vercel.app?_vercel_share=NnIumuOUUcJkucg0uAEukEdhOO1oXnuI 
+- Backend- https://aiadaptiveonboardingengine-production.up.railway.app/ 
 
 ## Future Enhancements
 - Integration with LLM
