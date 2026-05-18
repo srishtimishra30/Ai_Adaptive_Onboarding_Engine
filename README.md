@@ -154,10 +154,10 @@ http://localhost:5173
 # 👥 Team Contribution  
 
 This project was developed collaboratively where team members are: 
-##### Srishti Mishra
-##### Narottam Kumar
-##### Ankit Kumar
-##### Siddharth Karn
+#### Srishti Mishra
+#### Narottam Kumar
+#### Ankit Kumar
+#### Siddharth Karn
 The project reflects teamwork, problem-solving, and practical AI application development.  
 
 ---
