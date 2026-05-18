@@ -32,6 +32,8 @@ Built with scalable frontend and backend architecture for smooth performance.
 ## 🤖 AI-Based Logic  
 Implements intelligent algorithms for resume analysis and recommendation generation.  
 
+---
+
 # 🤝 Team Collaboration  
 Developed collaboratively with contributions across:  
 - Frontend development  
